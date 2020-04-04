@@ -34,6 +34,7 @@ function createRealmAccess(path = Realm.defaultPath) {
       try {
         __realm = await Realm.open({
           schema: [ITEM_SCHEMA],
+          encryptionKey: new Int8Array(64),
           path
         });
       } catch (error) {
